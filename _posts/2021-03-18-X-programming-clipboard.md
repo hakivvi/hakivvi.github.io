@@ -615,7 +615,7 @@ What the code does is:
 - before the second call we assign the value of `r_remaining_data_size` to `size_to_retrieve`, this time `XGetWindowProperty()` will retrieve everything.       
 
 `XEvent` is just a typedef of a union, `XEvent` contains the `type` field (type of Event) and a possible sub-event struct and padding, using the `type` field we can know what the other sub structure is, in our case we are expecting a `SelectionNotify` Event, if the type matches that then the other sub-event structure is `XSelectionEvent` we type-cast to that so we can access that structure, the later is where we will find the data we need (property, sender, ..), here is the `XEvent` definition:
-```
+{% highlight c %}
 typedef union _XEvent {
 	int type;	/* must not be changed */
 	XAnyEvent xany;
@@ -651,15 +651,15 @@ typedef union _XEvent {
 	XKeymapEvent xkeymap;
 	long pad[24];
 } XEvent;
-```
+{% endhighlight %}
 all the `X*` are the possible Events the `XEvent` union may contain, in our case (type == `SelectionNotify`) `XEvent` will look like this:
-```
+{% highlight c %}
 typedef union _XEvent {
 	XSelectionEvent xselection; // the Event
 } XEvent;
-```
+{% endhighlight %}
 and `XSelectionEvent` struct is defined like this:
-```
+{% highlight c %}
 typedef struct {
     int type;    /* SelectionNotify */
     unsigned long serial;    /* # of last request processed by server */
@@ -671,10 +671,10 @@ typedef struct {
     Atom property;    /* atom or None */
     Time time;
 } XSelectionEvent;
-```
+{% endhighlight %}
 so when i used `XEvent.type == SelectNotify` it is actually `XEvent.sub_event.type == SelectNotify`, it works because the first member of `XEvent` and all the other Events structures is `type` and because `XEvent` is a union.        
 Also Xlib defines a special X Event type: `XAnyEvent`, this struct is the head  of any Event:
-```
+{% highlight c %}
 typedef struct {
 	int type;
 	unsigned long serial;	/* # of last request processed by server */
@@ -682,9 +682,9 @@ typedef struct {
 	Display *display;	/* Display the event was read from */
 	Window window;
 } XAnyEvent;
-```
+{% endhighlight %}
 As you can see all of these members are defined in `XSelectionEvent` (and all the other Events as well) only the names are different:
-```
+{% highlight c %}
 typedef struct {
     int type;    /* SelectionNotify */
     unsigned long serial;    /* # of last request processed by server */
@@ -693,7 +693,7 @@ typedef struct {
     Window requestor;
     // the rest of members
 } XSelectionEvent;
-```
+{% endhighlight %}
 
 **NOTE:** the name of the property which the owner writes to, can be anything, we can call it after the Selection (e.i: `PRIMARY`/`CLIPBOARD`) or anything else we want.      
 
