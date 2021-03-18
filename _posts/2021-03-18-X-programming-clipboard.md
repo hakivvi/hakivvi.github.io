@@ -673,7 +673,7 @@ typedef struct {
 } XSelectionEvent;
 ```
 so when i used `XEvent.type == SelectNotify` it is actually `XEvent.sub_event.type == SelectNotify`, it works because the first member of `XEvent` and all the other Events structures is `type` and because `XEvent` is a union.        
-Also Xlib defines a special X Event type: `XAnyEvent`, this struct is the head  of any Event (or even the whole Event):
+Also Xlib defines a special X Event type: `XAnyEvent`, this struct is the head  of any Event:
 ```
 typedef struct {
 	int type;
