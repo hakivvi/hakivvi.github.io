@@ -2,7 +2,8 @@
 {% for post in posts %}
   <article>
     {% include meta.html post=post preview=true %}
-    {{ post.excerpt }}
+    {% assign disc = post.disc | replace_first: "posturl", {{post.url}} %}
+    {{ disc | markdownify }}
     <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
   </article>
 {% endfor %}
