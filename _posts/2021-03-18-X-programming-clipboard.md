@@ -700,7 +700,7 @@ typedef struct {
 
 **To be Continued:**{: #to-be-continued}
 
-This blogpost was actually just a couple of notes i wrote, i decided later to turn it into a post maybe it helps someone, and it is already long, also my free time is up, i didn't have a chance to cover how to own a Selection, TARGETS, Drag and drop.. i will try to write a part 2 if i can, i hope this one was helpful to you, you can find the code used in this blog [here](https://hakivvi.github.io/assets/blog-files/X-programming/code/).     
+This blogpost was actually just a couple of notes i wrote, i decided later to turn it into a post maybe it helps someone, and it is already long, also my free time is up, i didn't have a chance to cover how to own a Selection, TARGETS, Drag and drop.. i will try to write a part 2, i hope this one was helpful to you.     
 **Thanks for reading and goodbye!**
 
 
