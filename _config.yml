@@ -1,10 +1,12 @@
 title: "hakivvi's Blog"
 author: "hakivvi"
-description: "<b style=\"color: #ccd1d1;\">Blog | computer related stuffs</b>"
+description: "<b style=\"color: #ccd1d1;\">Blog | computer related stuff</b>"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
+
+theme: light
 
 # Layout
 
