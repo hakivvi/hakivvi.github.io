@@ -27,7 +27,7 @@ I hope you already familiar with *X* basics, as this post is basically about the
 
 **X Window System:**{: #x-window-system}
 
-*X Window System* or *X* is the windowing system that is responsible of graphics stuffs on most of Unix and Linux systems. thus responsible of drawing to screen, creating windows, user interactions, etc. X is based on a client-server model, where the client is the programs that request services from the server ( GUI services, clipboard services, ..) and the server is a local or a remote *X Server*, and it uses the *X Protocol* to communicate with its clients. *X11 (X11R7.7)* is the most recent version of this protocol released in *June 2012*.
+*X Window System* or *X* is the windowing system that is responsible of graphics stuff on most of Unix and Linux systems. thus responsible of drawing to screen, creating windows, user interactions, etc. X is based on a client-server model, where the client is the programs that request services from the server ( GUI services, clipboard services, ..) and the server is a local or a remote *X Server*, and it uses the *X Protocol* to communicate with its clients. *X11 (X11R7.7)* is the most recent version of this protocol released in *June 2012*.
 
 **Server Address:**{: #server-address}
 
